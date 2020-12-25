@@ -6,7 +6,7 @@ class Home extends Component {
 
     componentDidMount() {
         this.getRandomQuote().then((result) => {
-            const data = result.data.data[0];
+            const data = result.data.data;
             console.log(data.quoteText);
             this.setState({
                 randomQuote: data
@@ -30,7 +30,7 @@ class Home extends Component {
 
     handleNewRandomQuote = () => {
         this.getRandomQuote().then((result) => {
-            const data = result.data.data[0];
+            const data = result.data.data;
             console.log(data);
             this.setState({
                 randomQuote: data
@@ -39,15 +39,15 @@ class Home extends Component {
     }
 
     render() {
-        const show = this.state.randomQuote === null ? (<span>Loading...</span>) : (<Quote quote={this.state.randomQuote} />);
+        const show = this.state.randomQuote === null ? (<span>Loading...</span>) : (<Quote quotes={this.state.randomQuote} />);
         return (
             <>
                 <Navbar onNewRandomQuote={this.handleNewRandomQuote} />
                 <section>
-                    {show}
+                    { show }
                 </section>
                 <footer>
-                    Ralph Placide @ DevChalennges.io
+                    Ralph Placide @ DevChallenges.io
                 </footer>
             </>
         );

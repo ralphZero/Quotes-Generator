@@ -24,6 +24,7 @@
     font-weight: 700;
     font-size: 18px;
     color: #4f4f4f;
+    text-decoration: none;
     transition: background-color 330ms ease-in;
 }
 .quoteAuthor div{
